@@ -12,19 +12,27 @@ body {
 }
 
 button {
-  color: white;
-  background-color: rgb(214, 8, 8);
-  border: none;
-  width: 150px;
-  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  width: 200px;
+  border-radius: 4px;
   height: 30px;
-  font-family: cursive;
+  display: flex;
+  flex-direction: row;
+  font-family: 'JetBrains Mono';
   position: absolute;
   margin-left: 500px;
+  transition: all 0.2s ease-in-out;
   transition: 1s;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  line-height: 24px;
 }
 
 button:hover {
-  background-color: rgb(190, 5, 5);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  color: #242424;
 }
