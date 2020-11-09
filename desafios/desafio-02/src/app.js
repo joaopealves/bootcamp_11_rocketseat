@@ -65,12 +65,8 @@ app.delete('/repositories/:id', (request, response) => {
 });
 
 app.post('/repositories/:id/like', (request, response) => {
-  // TODO
-});
-
-app.put('/repositories/:id/likes', (request, response) => {
   const { id } = request.params;
-  const { likes } = request.body;
+  const { title, url, techs, likes } = request.body;
 
   const repositorieIndex = repositories.findIndex(
     (repositories) => repositories.id == id
@@ -79,7 +75,12 @@ app.put('/repositories/:id/likes', (request, response) => {
   if (repositorieIndex < 0) {
     return response.status(400).json({ error: 'repository not found' });
   }
-  const repository = { id, likes };
+
+  const repository = { id, title, url, techs, likes };
+
+  //O erro está aqui, os valores, title, url, techs estão retornando undefined
+
+  console.log(repository);
 
   repositories[repositorieIndex] = repository;
 
